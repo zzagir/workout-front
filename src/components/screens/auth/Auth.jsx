@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-
 import Button from '../../ui/button/Button'
 import Field from '../../ui/field/Field'
 import Loader from '../../ui/field/Loader'
+
+import { useAuthPage } from '../../../hooks/useAuthPage'
 
 import Layout from '../../layout/Layout'
 
@@ -13,19 +12,8 @@ const isLoading = false
 const isLoadingAuth = false
 
 const Auth = () => {
-	const [type, setType] = useState('auth')
-
-	const {
-		register,
-		handleSubmit,
-		formState: { errors }
-	} = useForm({
-		mode: 'onChange'
-	})
-
-	const onSubmit = data => {
-		console.log(data)
-	}
+	const { errors, handleSubmit, isLoading, onSubmit, register, setType } =
+		useAuthPage()
 
 	return (
 		<>
@@ -50,8 +38,8 @@ const Auth = () => {
 						placeholder='Enter password'
 					/>
 					<div className={styles.wrapperButtons}>
-						<Button clickHandler={() => setType('auth')}>Sign in</Button>
-						<Button clickHandler={() => setType('reg')}>Sign up</Button>
+						<Button clickHandler={() => setType('login')}>Sign in</Button>
+						<Button clickHandler={() => setType('register')}>Sign up</Button>
 					</div>
 				</form>
 			</div>

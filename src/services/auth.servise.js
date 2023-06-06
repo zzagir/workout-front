@@ -1,15 +1,25 @@
 import Cookies from 'js-cookie'
 
 import { $axios } from '../api'
+import { TOKEN } from '../app.constants'
 
 class AuthService {
-	async main(type) {
+	async main(email, password, type) {
 		try {
-			const { data } = await $axios.post(`/users/${type}`)
-			if (data.token) Cookies.set('red', data.token)
+			const { data } = await $axios.post(
+				`http://localhost:5000/api/auth/${type}`,
+				{
+					email,
+					password
+				}
+			)
+
+			if (data.token) Cookies.set(TOKEN, data.token)
 
 			return data
-		} catch (error) {}
+		} catch (error) {
+			throw new Error(error)
+		}
 	}
 }
 

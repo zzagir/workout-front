@@ -1,12 +1,28 @@
 /* eslint-disable no-undef */
 import cn from 'clsx'
-import { Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import { Link, useNavigate } from 'react-router-dom'
+
+import { useAuth } from '../../../hooks/useAuth'
+
+import { TOKEN } from '../../../app.constants'
 
 import styles from './Hamburger.module.scss'
 import { menu } from './menu.data'
 
 const Menu = ({ isShow, setIsShow }) => {
-	const logoutHandler = () => {}
+	const { setIsAuth } = useAuth()
+
+	const navigate = useNavigate()
+
+	const logoutHandler = () => {
+		Cookies.remove(TOKEN)
+		setIsAuth(false)
+		setIsShow(false)
+
+		navigate('/auth')
+	}
+
 	return (
 		<nav
 			className={cn(styles.menu, {

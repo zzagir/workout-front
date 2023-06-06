@@ -11,6 +11,7 @@ import styles from './Header.module.scss'
 const Header = ({ backLink = '/' }) => {
 	const { pathname } = useLocation()
 	const navigate = useNavigate()
+
 	const { isAuth } = useAuth()
 
 	return (
@@ -18,7 +19,7 @@ const Header = ({ backLink = '/' }) => {
 			{pathname !== '/' ? (
 				<button
 					onClick={() => {
-						navigate(backLink)
+						navigate(isAuth ? backLink : 'auth')
 					}}
 				>
 					<IoMdArrowBack />
@@ -26,13 +27,13 @@ const Header = ({ backLink = '/' }) => {
 			) : (
 				<button
 					onClick={() => {
-						navigate(isAuth ? '/profile' : '/auth')
+						navigate('/profile')
 					}}
 				>
 					<SlUser fontSize={27} />
 				</button>
 			)}
-			<Hamburger />
+			{isAuth && <Hamburger />}
 		</header>
 	)
 }
