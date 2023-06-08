@@ -1,5 +1,7 @@
+import Layout from '../../layout/Layout'
+
 const NewWorkout = () => {
-	return <div>NewWorkout</div>
+	return <Layout heading='New workout'></Layout>
 }
 
 export default NewWorkout
