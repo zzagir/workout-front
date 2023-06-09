@@ -1,8 +1,8 @@
 import { $axios } from '../../api'
 
-const EXERCISES = '/exercises'
+export const EXERCISES = '/exercises'
 // http://localhost:5000/api/auth/
-class ExercisesService {
+class ExerciseService {
 	async getAll() {
 		return $axios.get(`http://localhost:5000/api${EXERCISES}`)
 	}
@@ -19,4 +19,4 @@ class ExercisesService {
 	}
 }
 
-export default new ExercisesService()
+export default new ExerciseService()
