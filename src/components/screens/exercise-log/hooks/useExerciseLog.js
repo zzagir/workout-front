@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import ExerciseLogService from '../../../../services/exercise/exercise-log.service'
+import ExerciseLogService from '../../../../services/exercise/exercise-log.servise'
 
 import { useUpdateLogTime } from './useUpdateLogTime'
 
@@ -22,7 +22,7 @@ export const useExerciseLog = () => {
 		}
 	})
 
-	const { error, updateTime } = useUpdateLogTime(exerciseLog?.times)
+	const { error, updateTime } = useUpdateLogTime(times)
 
 	const onChangeState = (timeId, key, value) => {
 		const newTimes = times.map(time => {

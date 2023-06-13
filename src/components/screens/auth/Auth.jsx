@@ -1,6 +1,6 @@
+import Loader from '../../ui/Loader'
 import Button from '../../ui/button/Button'
 import Field from '../../ui/field/Field'
-import Loader from '../../ui/field/Loader'
 
 import { useAuthPage } from '../../../hooks/useAuthPage'
 

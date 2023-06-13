@@ -1,6 +1,6 @@
 import cn from 'clsx'
 
-import Loader from '../../ui/field/Loader'
+import Loader from '../../ui/Loader'
 
 import stylesLayout from '../../layout/Layout.module.scss'
 import Header from '../../layout/header/Header'

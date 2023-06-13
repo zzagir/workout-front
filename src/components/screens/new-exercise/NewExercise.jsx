@@ -2,10 +2,10 @@ import { useMutation } from '@tanstack/react-query'
 import cn from 'clsx'
 import { Controller, useForm } from 'react-hook-form'
 
+import Loader from '../../ui/Loader'
 import Alert from '../../ui/alert/Alert'
 import Button from '../../ui/button/Button'
 import Field from '../../ui/field/Field'
-import Loader from '../../ui/field/Loader'
 
 import ExerciseServise from '../../../services/exercise/exercise.servise'
 import Layout from '../../layout/Layout'

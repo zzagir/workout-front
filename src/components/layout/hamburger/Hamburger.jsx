@@ -12,7 +12,7 @@ const Hamburger = () => {
 
 	return (
 		<div className={styles.wrapper} ref={ref}>
-			<button onClick={() => setIsShow(!isShow)}>
+			<button aria-label='open menu' onClick={() => setIsShow(!isShow)}>
 				{isShow ? <IoClose /> : <CgMenuRight />}
 			</button>
 			<Menu isShow={isShow} setIsShow={setIsShow} />

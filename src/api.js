@@ -6,9 +6,9 @@ import { TOKEN } from './app.constants'
 const API_URL = `${import.meta.env.VITE_SERVER_URL}/api`
 
 export const $axios = axios.create({
-	baseUrl: API_URL,
+	baseURL: API_URL,
 	headers: {
-		'Content-type': 'application/json',
+		'Content-Type': 'application/json',
 		Authorization: Cookies.get(TOKEN) ? `Bearer ${Cookies.get(TOKEN)}` : ''
 	}
 })

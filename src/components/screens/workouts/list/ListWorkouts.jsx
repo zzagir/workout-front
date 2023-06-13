@@ -1,5 +1,5 @@
+import Loader from '../../../ui/Loader'
 import Alert from '../../../ui/alert/Alert'
-import Loader from '../../../ui/field/Loader'
 
 import Layout from '../../../layout/Layout'
 import styles from '../detail/Workout.module.scss'

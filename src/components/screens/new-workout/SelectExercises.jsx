@@ -1,7 +1,7 @@
 import { Controller } from 'react-hook-form'
 import ReactSelect from 'react-select'
 
-import Loader from '../../ui/field/Loader'
+import Loader from '../../ui/Loader'
 
 import { useListExercises } from './useListExercises'
 

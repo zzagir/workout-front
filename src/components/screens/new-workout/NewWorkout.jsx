@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
+import Loader from '../../ui/Loader'
 import Alert from '../../ui/alert/Alert'
 import Button from '../../ui/button/Button'
 import Field from '../../ui/field/Field'
-import Loader from '../../ui/field/Loader'
 
 import Layout from '../../layout/Layout'
 

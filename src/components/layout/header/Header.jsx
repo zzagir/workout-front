@@ -20,6 +20,7 @@ const Header = ({ backLink = '/' }) => {
 				<>
 					{pathname == '/' && isAuth ? (
 						<button
+							aria-label='go to profile'
 							onClick={() => {
 								navigate('/profile')
 							}}
@@ -28,6 +29,7 @@ const Header = ({ backLink = '/' }) => {
 						</button>
 					) : (
 						<button
+							aria-label='go back'
 							onClick={() => {
 								navigate(backLink)
 							}}
